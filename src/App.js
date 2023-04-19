@@ -3,7 +3,9 @@ import Card from './components/Card';
 function App() {
   return (
     <>
-      <h1>Testing the heading</h1>
+      <header>
+        <h1>READ BIOGRAPHY OF NIGERIA BEST AUTHORS </h1>
+      </header>
       <Card />
     </>
   );

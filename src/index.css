@@ -11,7 +11,13 @@ html {
 body {
   font-size: 2rem;
   font-family: sans-serif;
-  background-color: #f3f0f0;
+  background-color: rgb(31, 33, 32);
+}
+header{
+  text-align: center;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: 2rem;
+  color: rgb(73, 171, 161);
 }
 
 .card{
@@ -19,8 +25,8 @@ body {
   padding: 2rem;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   width: 50%;
-  border-radius: 0.8rem;
-  background: whitesmoke;
+  border-radius: 1.2rem;
+  background: rgb(204, 201, 195);
  
 }
 .card-content{
@@ -28,10 +34,12 @@ body {
   flex-direction: column;
   gap: 2rem;
   align-items: center;
+  color:rgb(32, 29, 29)
 }
 .bio{
   text-align: justify;
 }
+
 .pix{
   width:30%;
   height: auto;
@@ -42,15 +50,38 @@ img{
 border-radius: 60vw;
 
 }
+.name{
+  color: rgb(73, 171, 161);
+}
+.show{
+  color:green;
+  margin-left: 1rem;
+  background: papayawhip;
+  border: 0;
+}
 .arrows{
-  width: 50%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  color: green;
+  align-items: center;
+  color: rgb(73, 171, 161);
   font-size: 4rem;
   
 }
 .arrow:hover{
   cursor: pointer;
   color: gray;
+}
+button:hover{
+  cursor: pointer;
+  opacity: 0.6;
+}
+.random{
+  
+  padding: 0.8rem;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color:  rgb(204, 201, 195);
+  font-weight: 800;
+  font-size: 1.5rem;
+  background: rgb(31, 33, 32);
 }

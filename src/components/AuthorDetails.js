@@ -1,22 +1,38 @@
 import { MdOutlineArrowForwardIos, MdOutlineArrowBackIosNew } from 'react-icons/md';
 import { useState } from 'react';
-import data from '../data/AuthorData';
+import PropTypes from 'prop-types';
 
-const AuthorDetails = () => {
-  const [index, setIndex] = useState(0);
-  const { name, biography, pix } = data[index];
+const AuthorDetails = ({
+  authorData, moveLeft, moveRight, randomAuthor,
+}) => {
+  const { name, pix, biography } = authorData;
+
+  const [show, setShow] = useState(false);
   return (
     <section className="card-content">
-      <div className="pix"><img src={pix} alt={name} /></div>
-      <h2>{name}</h2>
-      <p className="bio">{biography}</p>
+
       <div className="arrows">
-        <div className="arrow"><MdOutlineArrowBackIosNew onClick={() => setIndex((current) => current - 1)} /></div>
-        <div className="arrow"><MdOutlineArrowForwardIos onClick={() => setIndex((current) => current + 1)} /></div>
+        <div className="arrow"><MdOutlineArrowBackIosNew onClick={moveRight} /></div>
+        <div className="pix"><img src={pix} alt={name} /></div>
+        <div className="arrow"><MdOutlineArrowForwardIos onClick={moveLeft} /></div>
       </div>
+      <h2 className="name">{name}</h2>
+      <p className="bio">
+        {show ? biography : `${biography.substring(0, 100)}.....`}
+        <button type="button" className="show" onClick={() => setShow(!show)}>{show ? 'Show Less' : 'Read More'}</button>
+      </p>
+
+      <button type="button" className="random" onClick={randomAuthor}>Show Random Author</button>
 
     </section>
   );
+};
+
+AuthorDetails.propTypes = {
+  authorData: PropTypes.objectOf(PropTypes.string).isRequired,
+  moveLeft: PropTypes.func.isRequired,
+  moveRight: PropTypes.func.isRequired,
+  randomAuthor: PropTypes.func.isRequired,
 };
 
 export default AuthorDetails;
